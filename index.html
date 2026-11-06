@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f1e">
+  <title>MLBB Fan — Cek Status Ban</title>
+  <meta name="description" content="Fan tool untuk memeriksa status ban akun Mobile Legends menggunakan Player ID dan Zone ID.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">M</span><span>MLBB<span class="brand-accent"> FAN</span><small>COMMUNITY TOOL</small></span></a>
+    <span class="top-status"><i></i> API CHECKER</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span></span> MOBILE LEGENDS • FAN TOOL</div>
+      <h1>Periksa status<br><span>ban akunmu.</span></h1>
+      <p>Masukkan Player ID dan Zone ID untuk memeriksa informasi status akun melalui layanan API.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><span class="step">01 / ACCOUNT</span><h2>Informasi akun</h2></div>
+        <span class="shield">♢ SECURE CHECK</span>
+      </div>
+      <form id="checkForm">
+        <div class="field-grid">
+          <label class="field"><span>PLAYER ID</span><input id="playerId" inputmode="numeric" autocomplete="off" placeholder="Contoh: 123456789" required pattern="[0-9]+" maxlength="20"></label>
+          <label class="field"><span>ZONE ID</span><input id="zoneId" inputmode="numeric" autocomplete="off" placeholder="Contoh: 1234" required pattern="[0-9]+" maxlength="10"></label>
+        </div>
+        <button class="primary" id="checkBtn" type="submit"><span>PERIKSA STATUS BAN</span><b>→</b></button>
+      </form>
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+      <section id="result" class="result" hidden>
+        <div class="result-top"><span class="step">02 / CHECK RESULT</span><span id="statusPill" class="status-pill">HASIL</span></div>
+        <h3 id="nickname">—</h3><p class="account-line">Player ID <b id="outPlayer">—</b> <span>•</span> Zone ID <b id="outZone">—</b></p>
+        <div class="result-grid">
+          <div class="result-item"><small>STATUS BAN</small><strong id="banStatus">—</strong></div>
+          <div class="result-item"><small>ALASAN BAN</small><strong id="banReason">—</strong></div>
+          <div class="result-item"><small>POIN DIPOTONG</small><strong id="pointsDeducted">—</strong></div>
+          <div class="result-item"><small>SISA POIN</small><strong id="pointsRemaining">—</strong></div>
+          <div class="result-item wide"><small>WAKTU PROSES</small><strong id="processingTime">—</strong></div>
+        </div>
+        <p class="disclaimer">Hasil mengikuti data yang dikembalikan penyedia API, bukan verifikasi resmi dari Moonton.</p>
+      </section>
+    </section>
+
+    <section class="balance-panel">
+      <div><span class="step">API INFORMATION</span><h2>Informasi penggunaan API</h2><p>Lihat sisa poin layanan yang digunakan untuk pengecekan.</p></div>
+      <button id="balanceBtn" class="secondary" type="button">CEK SALDO <span>↗</span></button>
+      <div id="balance" class="balance-result" hidden></div>
+    </section>
+
+    <footer><span>MLBB FAN CHECKER</span><span>Fan-made tool • Tidak berafiliasi dengan Moonton</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
